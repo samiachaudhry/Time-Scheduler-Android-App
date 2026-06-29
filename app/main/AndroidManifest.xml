@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.saqi.time_scheduler">
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.SET_ALARM" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/logosplashh"
+        android:label="@string/app_name"
+        android:requestLegacyExternalStorage="true"
+        android:roundIcon="@drawable/logosplashh"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Time_Scheduler">
+        <activity
+            android:name=".UI.Admin.ReportActivity"
+            android:label="Report" />
+        <activity
+            android:name=".UI.Teacher.ArrangeClassActivity"
+            android:theme="@style/Theme.Time_Scheduler.NoActionBar" />
+        <activity android:name=".UI.Admin.GetAssignSubjects" />
+        <activity
+            android:name=".UI.Admin.ShowFeedbacksActivity"
+            android:label="Feedbacks" />
+        <activity
+            android:name=".UI.Admin.AddTeacher"
+            android:theme="@style/Theme.Time_Scheduler.NoActionBar" />
+        <activity
+            android:name=".UI.Admin.AssignTeachers"
+            android:theme="@style/Theme.Time_Scheduler.NoActionBar" />
+        <activity
+            android:name=".UI.Admin.AdminHome"
+            android:theme="@style/Theme.Time_Scheduler.NoActionBar" />
+        <activity
+            android:name=".UI.Admin.AddRoom"
+            android:theme="@style/Theme.Time_Scheduler.NoActionBar" />
+        <activity
+            android:name=".UI.Admin.TimeSlots"
+            android:theme="@style/Theme.Time_Scheduler.NoActionBar" />
+        <activity
+            android:name=".UI.Admin.AddClass"
+            android:theme="@style/Theme.Time_Scheduler.NoActionBar" />
+        <activity
+            android:name=".UI.Admin.AddSubject"
+            android:theme="@style/Theme.Time_Scheduler.NoActionBar" />
+        <activity
+            android:name=".UI.Login"
+            android:theme="@style/Theme.Time_Scheduler.NoActionBar" />
+        <activity
+            android:name=".UI.FeedbackActivity"
+            android:theme="@style/Theme.Time_Scheduler.NoActionBar" />
+        <activity
+            android:name=".UI.SignUp"
+            android:theme="@style/Theme.Time_Scheduler.NoActionBar" />
+        <activity
+            android:name=".UI.SplashScreen"
+            android:theme="@style/Theme.Time_Scheduler.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name="com.theartofdev.edmodo.cropper.CropImageActivity" />
+        <activity android:name=".UI.MainActivity" />
+
+        <service
+            android:name=".Notifications.MyFireBaseMessagingService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+
+        <receiver
+            android:name=".Services.MyNotificationBroadcastReceiver"
+            android:process=":remote" />
+    </application>
+
+</manifest>
